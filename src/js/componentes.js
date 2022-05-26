@@ -50,7 +50,7 @@ txtInput.addEventListener('keyup', ( event ) => {
 
 divTodoList.addEventListener('click', ( event ) => {
 
-	const nombreElemento = event.target.localName;  //input, label, button 
+	const nombreElemento = event.target.localName;  
 	const todoElemento   = event.target.parentElement.parentElement;
 	const todoId         = todoElemento.getAttribute( 'data-id' );
 
@@ -61,8 +61,7 @@ divTodoList.addEventListener('click', ( event ) => {
 		todoElemento.classList.toggle( 'completed');
 
 
-	} else if ( nombreElemento.includes('button') ) { //hay que borrar el todo
-
+	} else if ( nombreElemento.includes('button') ) { 
 		todoList.eliminarTodo( todoId );
 		divTodoList.removeChild( todoElemento );
 	}

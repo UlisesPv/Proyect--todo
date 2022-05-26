@@ -4,7 +4,6 @@ export  class TodoList {
 
     constructor() {
 
-        // this.todos = [];
         this.cargarLocalStorage();
 
     }
@@ -50,21 +49,11 @@ export  class TodoList {
 
     cargarLocalStorage(){
        
-    //     if( localStorage.getItem('todo') ){
-            
-
-    //         this.todos = JSON.parse(localStorage.getItem('todo'));
-
-    //         console.log( ' cargarLocal:', this.todos);
-    // }else {
-    //     this.todos = [];
-
-    // }
-
+   
     this.todos = (localStorage.getItem('todo'))
                   ? JSON.parse(localStorage.getItem('todo')) 
                   : [];
-        // this.todos = this.todos.map( obj => Todo.fromJson (obj));   Esto igual al línea 68
+       
         this.todos = this.todos.map(  Todo.fromJson);
 
     } 
